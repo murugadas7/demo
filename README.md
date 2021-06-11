@@ -19,3 +19,6 @@ $ npm run generate
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
 "# demo" 
+
+
+![Alt text](screenshot1.png?raw=true "Title")
