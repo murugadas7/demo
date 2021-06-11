@@ -1,6 +1,6 @@
 <template>
   <div class="ui container">
-    <template>
+    
   <div class="ui text menu">
     <div class="item">
       <NuxtLink to="/">
@@ -10,7 +10,7 @@
 
      
   </div>
-</template>
+ 
     <div>
       <h2 class="ui left aligned header topSpace">
         Assignment 1 : List Library Shops
@@ -20,7 +20,7 @@
         <p v-if="$fetchState.pending">fetching Libraries...</p>
         <p v-else-if="$fetchState.error">Error while fetching Libraries</p>
 
-        <table class="ui single line table" v-else>
+        <table class="ui striped line table" v-else>
           <thead>
             <tr>
               <th>Branch Code</th>
@@ -29,12 +29,19 @@
           </thead>
           <tbody>
             <tr v-for="library in librariesJsonData.libraries" :key="library.alephSublibCode">
-              <td>
-                <NuxtLink :to="library.alephSublibCode">
+              <td  >
+                <h5 class="ui    aligned header"><NuxtLink :to="library.alephSublibCode" class="ui green">
                   {{ library.alephSublibCode }}
                 </NuxtLink>
+                </h5>
               </td>
-              <td>{{ library.libraryName }}</td>
+              <td>
+              <h5 class="ui    aligned header">
+                <NuxtLink :to="library.alephSublibCode" class="ui green">
+                   {{ library.libraryName }}
+                </NuxtLink>
+                </h5>
+              </td>
             </tr>
           </tbody>
         </table>
