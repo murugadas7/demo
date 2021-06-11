@@ -23,4 +23,6 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 
 ![Alt text](screenshot1.png?raw=true "Title")
 
+## On Click on any specific list then it load this page 
+
 ![Alt text](screenshot2.png?raw=true "Title")
