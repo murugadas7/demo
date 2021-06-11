@@ -18,4 +18,12 @@ $ npm run generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
-"# demo" 
+ 
+
+## Demo Screenshot Page
+
+![Alt text](screenshot1.png?raw=true "Title")
+
+## On click on any specific list then it load this page 
+
+![Alt text](screenshot2.png?raw=true "Title")

@@ -15,6 +15,10 @@ export default {
     ]
   },
 
+  axios: {
+    proxy: true
+  },
+   
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [ '~/assets/semantic.css'
   ],
@@ -32,8 +36,8 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-  ],
-
+     
+  ], 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   }

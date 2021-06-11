@@ -1,10 +1,24 @@
 <template>
   <div class="ui container">
-    <Header />
+    <template>
+      <div class="ui text menu">
+        <div class="item">
+          <NuxtLink to="/">
+            <img src="~/assets/images/logo.png" alt="logo" />
+          </NuxtLink>
+        </div>
+
+        <div class="ui right item">
+            
+                <button @click="goBack" class="ui button green"><i class="home icon"></i> Home</button>
+            
+        </div>
+      </div>
+    </template>
     <h2 class="ui header">
       <div class="ui grid">
         <div class="sixteen wide column"></div>
-        <div class="fourteen wide column">
+        <div class="sixteen wide column">
           <i class="circular book icon"></i>
           <div class="content">
             {{ libraryData.libraryName }}
@@ -12,9 +26,7 @@
             <div class="sub header">{{ libraryData.alephSublibCode }}</div>
           </div>
         </div>
-        <div class="two wide column">
-          <button @click="goBack" class="ui button green">Back</button>
-        </div>
+         
       </div>
     </h2>
 
@@ -39,17 +51,17 @@
                 <div
                   class="ui item"
                   v-for="email in libraryData.contact.emails"
-                  :key="email"
+                  :key="email.address"
                 >
                   <i class="envelope icon left"></i>
-                  <a :href="`mailto:${email.address}`"> {{ email.address }} </a>
+                  <a :href="`mailto:${email.address}`"> {{email.address}} </a>
                 </div>
               </div>
               <div class="ui contact">
                 <div
                   class="ui"
                   v-for="website in libraryData.contact.websites"
-                  :key="website"
+                  :key="website.address"
                 >
                   <i class="globe icon"></i>
                   <a :href="website.address" target="_blank">
@@ -61,7 +73,7 @@
                 <div
                   class="ui"
                   v-for="phone in libraryData.contact.phones"
-                  :key="phone"
+                  :key="phone.number"
                 >
                   <i class="phone flipped icon"></i>
                   <a :href="`tel:${phone.number}`"> {{ phone.number }} </a>
@@ -139,9 +151,7 @@
             <h4 class="ui header">Remarks</h4>
             <div class="ui divider"></div>
             <ul class="ui list" v-if="!!libraryData.generalRemarks">
-              <li
-                v-for="generalRemark in libraryData.generalRemarks"
-                :key="generalRemark"
+              <li  v-for="generalRemark in libraryData.generalRemarks" :key="generalRemark"
                 v-if="!!generalRemark" >
                 {{ generalRemark }}
               </li>
@@ -171,8 +181,7 @@ export default {
   },
   async asyncData ({ params }) {
     const libraryData = await fetch(
-      `http://infobib.bibnet.lu/show.php?lib=${params.alephSublibCode}&format=json&lang=eng`
-    ).then((res) => {
+      `http://infobib.bibnet.lu/show.php?lib=${params.alephSublibCode}&format=json&lang=eng`).then((res) => {
       if (res.ok) {
         return res.json()
       }

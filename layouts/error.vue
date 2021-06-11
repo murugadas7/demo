@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="ui container">
     <p class="error-text">404</p>
     <div>
       <span>Take me</span>
@@ -16,9 +16,7 @@ export default {}
 .container {
   height: viewport;
   background-color: rgba(0, 255, 0, 0.5);
-  text-align: center;
-  display: flex;
-  flex-direction: column;
+  
 }
 .error-text {
   font-size: 130px;

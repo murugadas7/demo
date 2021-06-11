@@ -1,6 +1,16 @@
 <template>
   <div class="ui container">
-    <Header />
+    <template>
+  <div class="ui text menu">
+    <div class="item">
+      <NuxtLink to="/">
+        <img src="~/assets/images/logo.png" alt="logo" />
+      </NuxtLink>
+    </div>
+
+     
+  </div>
+</template>
     <div>
       <h2 class="ui left aligned header topSpace">
         Assignment 1 : List Library Shops
@@ -36,7 +46,7 @@
 <script>
 export default {
   async fetch () {
-    this.librariesJsonData = await fetch('http://infobib.bibnet.lu/bibnet-libraries.json').then(
+    this.librariesJsonData = await fetch('http://infobib.bibnet.lu/bibnet-libraries.json' ).then(
         (res) => res.json()
     )
   },
